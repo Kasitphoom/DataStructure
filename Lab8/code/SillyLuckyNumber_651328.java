@@ -1,0 +1,29 @@
+package Lab8.code;
+
+public class SillyLuckyNumber_651328 {
+    private String breed;
+    private int luckyNumber;
+    private int threeDigit; // 0 to 999
+
+    public SillyLuckyNumber_651328(String s) {
+        breed = s;
+        for (int i = 0; i < breed.length(); i++)
+            luckyNumber += breed.charAt(i);
+        threeDigit = luckyNumber % 1000;
+    }
+
+    // getters
+    @Override
+    public String toString() {
+        return "<<" + breed + " "
+                + luckyNumber + " " + threeDigit + ">>";
+    }
+
+    public void setBreed(String b) {
+        breed = b;
+    }
+
+    public int getLuckyNumer() {
+        return luckyNumber;
+    }
+}

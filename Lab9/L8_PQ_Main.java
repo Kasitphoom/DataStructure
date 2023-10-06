@@ -1,0 +1,50 @@
+package Lab9;
+
+import java.util.ArrayList;
+
+import Lab9.code.MyMinHeap_651328;
+import Lab9.code.MyPriorityQueue_651328;
+
+public class L8_PQ_Main {
+    static ArrayList<Integer> least3;
+
+    public static void main(String[] args) {
+        System.out.println("-demo1---");
+        demo1();
+        System.out.println("-demo2---");
+        demo2();
+    }
+
+    static void demo1() {
+        least3 = new ArrayList<>();
+        MyMinHeap_651328 heap = new MyMinHeap_651328();
+        heap.insert(11);
+        heap.insert(15);
+        heap.insert(16);
+        heap.insert(13);
+        heap.insert(17);
+        heap.insert(18);
+        System.out.println("heap strucutre is\n" + heap);
+        least3.add(heap.remove());
+        least3.add(heap.remove());
+        least3.add(heap.remove());
+        System.out.println("least 3 value is " + least3);
+    }
+
+    static void demo2() {
+        least3 = new ArrayList<>();
+        MyPriorityQueue_651328 pq = new MyPriorityQueue_651328();
+        pq.enqueue(11);
+        pq.enqueue(15);
+        pq.enqueue(16);
+        pq.enqueue(13);
+        pq.enqueue(17);
+        pq.enqueue(18);
+        pq.enqueue(19); // <-- isFull() is true ... discard
+        System.out.println("pq structure is\n" + pq);
+        least3.add(pq.dequeue());
+        least3.add(pq.dequeue());
+        least3.add(pq.dequeue());
+        System.out.println("least 3 value is " + least3);
+    }
+}
